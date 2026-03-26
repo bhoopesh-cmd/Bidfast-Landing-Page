@@ -1,51 +1,54 @@
 import React from 'react';
 import { CheckCircle2, ArrowRight, Layers, ShieldCheck, Cpu } from 'lucide-react';
 
-export const LogoIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 240 60" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg" 
-    className={className}
-    aria-label="Bidfast Logo"
-  >
-    {/* Text: BIDFAST */}
-    <text 
-      x="0" 
-      y="38" 
-      fill="currentColor" 
-      fontFamily="Inter, sans-serif" 
-      fontWeight="900" 
-      fontSize="42" 
-      fontStyle="italic"
-      letterSpacing="-1"
+export const LogoIcon = ({ className, accentColor }: { className?: string; accentColor?: string }) => {
+  const accent = accentColor || 'var(--color-secondary-container)';
+  return (
+    <svg
+      viewBox="0 0 240 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-label="Bidfast Logo"
     >
-      BIDFAST
-    </text>
-    {/* Text: .ca */}
-    <text 
-      x="178" 
-      y="38" 
-      fill="var(--color-secondary-container)" 
-      fontFamily="Inter, sans-serif" 
-      fontWeight="700" 
-      fontSize="18" 
-    >
-      .ca
-    </text>
-    {/* Lightning Bolt Underline */}
-    <path 
-      d="M10 50 L120 45 L110 55 L200 48" 
-      stroke="var(--color-secondary-container)" 
-      strokeWidth="4" 
-      strokeLinecap="square"
-    />
-    <path 
-      d="M90 45 L105 35 L100 45" 
-      fill="var(--color-secondary-container)" 
-    />
-  </svg>
-);
+      {/* Text: BIDFAST */}
+      <text
+        x="0"
+        y="38"
+        fill="currentColor"
+        fontFamily="Inter, sans-serif"
+        fontWeight="900"
+        fontSize="42"
+        fontStyle="italic"
+        letterSpacing="-1"
+      >
+        BIDFAST
+      </text>
+      {/* Text: .ca */}
+      <text
+        x="178"
+        y="38"
+        fill={accent}
+        fontFamily="Inter, sans-serif"
+        fontWeight="700"
+        fontSize="18"
+      >
+        .ca
+      </text>
+      {/* Lightning Bolt Underline */}
+      <path
+        d="M10 50 L120 45 L110 55 L200 48"
+        stroke={accent}
+        strokeWidth="4"
+        strokeLinecap="square"
+      />
+      <path
+        d="M90 45 L105 35 L100 45"
+        fill={accent}
+      />
+    </svg>
+  );
+};
 
 export const CheckIcon = ({ className }: { className?: string }) => (
   <CheckCircle2 className={className} />

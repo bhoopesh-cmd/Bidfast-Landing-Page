@@ -243,7 +243,7 @@ export default function App() {
           }`}
         >
           <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-            <LogoIcon className={`h-8 w-auto ${useLightNavTheme ? 'text-primary' : 'text-white'}`} />
+            <LogoIcon className={`h-8 w-auto ${useLightNavTheme ? 'text-primary' : 'text-white'}`} accentColor={useLightNavTheme ? '#e11d24' : undefined} />
             <div
               className={`hidden items-center gap-8 font-headline text-sm font-semibold md:flex ${
                 useLightNavTheme ? 'text-primary/70' : 'text-white/72'
@@ -797,7 +797,7 @@ export default function App() {
         <footer className="bg-surface-container-low px-6 pb-8 pt-16">
           <div className="mx-auto grid max-w-7xl gap-12 border-b border-outline-variant/25 pb-12 md:grid-cols-4">
             <div className="md:col-span-1">
-              <LogoIcon className="h-8 w-auto text-primary" />
+              <LogoIcon className="h-8 w-auto text-primary" accentColor="#e11d24" />
               <p className="mt-6 text-sm leading-relaxed text-on-surface-variant">
                 © 2025 BIDFAST SYSTEMS INC.
                 <br />
