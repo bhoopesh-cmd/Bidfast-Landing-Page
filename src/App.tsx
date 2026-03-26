@@ -862,11 +862,6 @@ export default function App() {
               </ul>
             </div>
           </div>
-          <div className="mx-auto max-w-7xl pt-8 text-center">
-            <p className="font-label text-[10px] font-black uppercase tracking-[0.24em] text-on-surface-variant">
-              System Status: All Systems Operational
-            </p>
-          </div>
         </footer>
       </div>
     </div>
