@@ -243,7 +243,9 @@ export default function App() {
           }`}
         >
           <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-            <LogoIcon className={`h-8 w-auto ${useLightNavTheme ? 'text-primary' : 'text-white'}`} accentColor={useLightNavTheme ? '#e11d24' : undefined} />
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <LogoIcon className={`h-8 w-auto ${useLightNavTheme ? 'text-primary' : 'text-white'}`} accentColor={useLightNavTheme ? '#e11d24' : undefined} />
+            </a>
             <div
               className={`hidden items-center gap-8 font-headline text-sm font-semibold md:flex ${
                 useLightNavTheme ? 'text-primary/70' : 'text-white/72'
