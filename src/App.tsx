@@ -801,7 +801,7 @@ export default function App() {
             <div className="md:col-span-1">
               <LogoIcon className="h-8 w-auto text-primary" accentColor="#e11d24" />
               <p className="mt-6 text-sm leading-relaxed text-on-surface-variant">
-                © 2025 BIDFAST SYSTEMS INC.
+                © 2026 COGNITIVE COMPUTER SYSTEMS
                 <br />
                 VANCOUVER, BC, CANADA
               </p>
@@ -830,7 +830,7 @@ export default function App() {
               <h4 className="font-label text-[11px] font-black uppercase tracking-[0.24em] text-secondary">Company</h4>
               <ul className="mt-6 space-y-4 text-sm text-on-surface-variant">
                 <li>
-                  <a href="#" className="transition-colors hover:text-primary">
+                  <a href="https://www.ccsystems.ai/#/about" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
                     About
                   </a>
                 </li>
@@ -850,12 +850,12 @@ export default function App() {
               <h4 className="font-label text-[11px] font-black uppercase tracking-[0.24em] text-secondary">Legal</h4>
               <ul className="mt-6 space-y-4 text-sm text-on-surface-variant">
                 <li>
-                  <a href="#" className="transition-colors hover:text-primary">
+                  <a href="https://www.ccsystems.ai/#/privacy" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="transition-colors hover:text-primary">
+                  <a href="https://www.ccsystems.ai/#/terms" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
                     Terms of Service
                   </a>
                 </li>
