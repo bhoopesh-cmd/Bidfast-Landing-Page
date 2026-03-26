@@ -276,13 +276,13 @@ export default function App() {
         </nav>
 
         <section className="overflow-hidden px-4 pb-24 pt-20 md:px-8 md:pt-24">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-2 lg:grid-cols-12 lg:px-6">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-14 px-2 lg:grid-cols-12 lg:px-6">
             <div className="lg:col-span-7">
               <FadeIn delay={0.1}>
                 <h1 className="max-w-5xl font-headline text-[3.4rem] font-black leading-[0.9] tracking-[-0.06em] text-primary sm:text-[4.5rem] lg:text-[6.15rem]">
                   AUTOMATED ELECTRICAL
                   <span className="block text-secondary">TAKEOFFS</span>
-                  <span className="block">FOR CANADIAN CONTRACTORS.</span>
+                  <span className="block">FOR CANADIAN CONTRACTORS</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={0.2}>
