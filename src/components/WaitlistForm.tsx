@@ -26,122 +26,151 @@ export const WaitlistForm: React.FC = () => {
     e.preventDefault();
     setFormState({ isLoading: true, isSuccess: false, error: null });
 
-    // Simulate a small delay for better UX before showing success message
     setTimeout(() => {
       setFormState({ isLoading: false, isSuccess: true, error: null });
     }, 1200);
   };
 
+  const labelClasses = (field: string) =>
+    `mb-1 block font-label text-[11px] font-black uppercase tracking-[0.24em] ${
+      activeField === field ? 'text-secondary' : 'text-on-surface-variant'
+    }`;
+
+  const inputClasses = (field: string) =>
+    `w-full border-0 border-b bg-transparent pb-3 pt-4 font-body text-base text-primary placeholder:text-outline/70 transition-colors outline-none ${
+      activeField === field ? 'border-secondary-container' : 'border-outline-variant/35'
+    }`;
+
   if (formState.isSuccess) {
     return (
-      <div className="bg-navy-900 border border-flash-400/20 p-12 rounded-none relative overflow-hidden animate-fade-in w-full max-w-2xl mx-auto">
-        <div className="absolute top-0 left-0 w-full h-1 bg-flash-400"></div>
+      <div className="editorial-shadow ghost-border animate-fade-in mx-auto w-full max-w-2xl rounded-[1.75rem] bg-surface-container-lowest p-10 md:p-12">
         <div className="flex flex-col items-center text-center">
-          <div className="w-16 h-16 bg-flash-400/10 flex items-center justify-center rounded-full mb-6">
-            <CheckIcon className="w-8 h-8 text-flash-400" />
+          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-secondary-container/20 text-secondary">
+            <CheckIcon className="h-8 w-8" />
           </div>
-          <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">SUBMISSION RECEIVED</h3>
-          <p className="text-white/60 mb-8 max-w-xs font-mono text-sm">
-            Your details have been received. We will reach out when the beta is live.
+          <p className="mb-3 font-label text-[11px] font-black uppercase tracking-[0.26em] text-secondary">
+            Submission Received
+          </p>
+          <h3 className="mb-4 font-headline text-3xl font-black tracking-[-0.03em] text-primary">
+            We will reach out when the beta is live.
+          </h3>
+          <p className="mb-8 max-w-md text-base leading-relaxed text-on-surface-variant">
+            Your details are in. We&apos;ll follow up with beta access and next steps.
           </p>
           <button
             onClick={() => setFormState({ ...formState, isSuccess: false })}
-            className="text-xs font-mono text-flash-400 hover:text-white transition-colors uppercase tracking-widest border-b border-flash-400/30 pb-1"
+            className="font-label text-xs font-black uppercase tracking-[0.24em] text-primary underline decoration-secondary-container underline-offset-4 transition-colors hover:text-secondary"
           >
-            Resubmit form
+            Submit another response
           </button>
         </div>
       </div>
     );
   }
 
-  const inputClasses = "w-full bg-transparent border-b border-white/20 py-4 text-white placeholder-white/20 outline-none transition-all duration-300 focus:border-flash-400 font-light text-lg rounded-none";
-  const labelClasses = "block text-[10px] font-mono font-medium text-flash-400/70 uppercase tracking-widest mb-1";
-
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto space-y-8 bg-navy-900/50 p-8 md:p-12 border border-white/5 relative">
-      {/* Decorative corner accents */}
-      <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-flash-400/50"></div>
-      <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-flash-400/50"></div>
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-flash-400/50"></div>
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-flash-400/50"></div>
+    <form
+      onSubmit={handleSubmit}
+      className="editorial-shadow ghost-border mx-auto w-full max-w-2xl rounded-[1.75rem] bg-surface-container-lowest p-8 md:p-10"
+    >
+      <div className="mb-8">
+        <p className="mb-3 font-label text-[11px] font-black uppercase tracking-[0.26em] text-secondary-container">
+          Get Early Access
+        </p>
+        <h3 className="mb-3 font-headline text-3xl font-black tracking-[-0.03em] text-primary">
+          Join the Bidfast beta.
+        </h3>
+        <p className="max-w-xl text-base leading-relaxed text-on-surface-variant">
+          Tell us about your work and we&apos;ll reach out with beta access and a walkthrough of the platform.
+        </p>
+      </div>
 
       <div className="space-y-6">
-        <div className="group">
-          <label htmlFor="name" className={labelClasses}>Full Name</label>
+        <div>
+          <label htmlFor="name" className={labelClasses('name')}>
+            Full Name
+          </label>
           <input
             required
             type="text"
             name="name"
             id="name"
-            placeholder="ENTER NAME"
+            placeholder="John Doe"
             value={formData.name}
             onChange={handleChange}
             onFocus={() => setActiveField('name')}
             onBlur={() => setActiveField(null)}
-            className={inputClasses}
+            className={inputClasses('name')}
           />
         </div>
 
-        <div className="group">
-          <label htmlFor="email" className={labelClasses}>Email Address</label>
+        <div>
+          <label htmlFor="email" className={labelClasses('email')}>
+            Email Address
+          </label>
           <input
             required
             type="email"
             name="email"
             id="email"
-            placeholder="ENTER EMAIL"
+            placeholder="john@company.ca"
             value={formData.email}
             onChange={handleChange}
             onFocus={() => setActiveField('email')}
             onBlur={() => setActiveField(null)}
-            className={inputClasses}
+            className={inputClasses('email')}
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group">
-              <label htmlFor="phone" className={labelClasses}>Phone</label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="(000) 000-0000"
-                value={formData.phone}
-                onChange={handleChange}
-                onFocus={() => setActiveField('phone')}
-                onBlur={() => setActiveField(null)}
-                className={inputClasses}
-              />
-            </div>
-             <div className="group">
-              <label htmlFor="role" className={labelClasses}>Role</label>
-              <input
-                type="text"
-                name="role"
-                id="role"
-                placeholder="ENTER ROLE"
-                value={formData.role}
-                onChange={handleChange}
-                onFocus={() => setActiveField('role')}
-                onBlur={() => setActiveField(null)}
-                className={inputClasses}
-              />
-            </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div>
+            <label htmlFor="phone" className={labelClasses('phone')}>
+              Phone
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="+1 (555) 000-0000"
+              value={formData.phone}
+              onChange={handleChange}
+              onFocus={() => setActiveField('phone')}
+              onBlur={() => setActiveField(null)}
+              className={inputClasses('phone')}
+            />
+          </div>
+          <div>
+            <label htmlFor="role" className={labelClasses('role')}>
+              Role
+            </label>
+            <input
+              type="text"
+              name="role"
+              id="role"
+              placeholder="Estimator"
+              value={formData.role}
+              onChange={handleChange}
+              onFocus={() => setActiveField('role')}
+              onBlur={() => setActiveField(null)}
+              className={inputClasses('role')}
+            />
+          </div>
         </div>
 
-        <div className="group">
-          <label htmlFor="company" className={labelClasses}>Organization (Optional)</label>
+        <div>
+          <label htmlFor="company" className={labelClasses('company')}>
+            Organization
+          </label>
           <input
             type="text"
             name="company"
             id="company"
-            placeholder="ENTER COMPANY NAME"
+            placeholder="Your Company Name"
             value={formData.company}
             onChange={handleChange}
             onFocus={() => setActiveField('company')}
             onBlur={() => setActiveField(null)}
-            className={inputClasses}
+            className={inputClasses('company')}
           />
         </div>
       </div>
@@ -149,14 +178,15 @@ export const WaitlistForm: React.FC = () => {
       <button
         type="submit"
         disabled={formState.isLoading}
-        className="group relative w-full overflow-hidden bg-white text-navy-950 font-bold py-5 px-8 mt-4 transition-all hover:bg-flash-400 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="signature-gradient group mt-8 flex w-full items-center justify-center gap-4 rounded-xl px-8 py-4 font-headline text-sm font-black uppercase tracking-[0.14em] text-on-primary transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        <span className="relative z-10 flex items-center justify-center gap-4">
-          <span className="tracking-widest">{formState.isLoading ? 'PROCESSING...' : 'BOOK DEMO'}</span>
-          <ArrowIcon className={`w-5 h-5 transition-transform duration-300 ${formState.isLoading ? 'animate-spin' : 'group-hover:translate-x-2'}`} />
-        </span>
+        <span>{formState.isLoading ? 'Processing Request' : 'Request Access'}</span>
+        <ArrowIcon
+          className={`h-5 w-5 transition-transform duration-300 ${
+            formState.isLoading ? 'animate-pulse' : 'group-hover:translate-x-1'
+          }`}
+        />
       </button>
-
     </form>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, CheckCircle2, ArrowRight, Layers, ShieldCheck, Cpu } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Layers, ShieldCheck, Cpu } from 'lucide-react';
 
 export const LogoIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -26,25 +26,23 @@ export const LogoIcon = ({ className }: { className?: string }) => (
     <text 
       x="178" 
       y="38" 
-      fill="currentColor" 
+      fill="var(--color-secondary-container)" 
       fontFamily="Inter, sans-serif" 
       fontWeight="700" 
       fontSize="18" 
-      className="text-flash-400"
     >
       .ca
     </text>
     {/* Lightning Bolt Underline */}
     <path 
       d="M10 50 L120 45 L110 55 L200 48" 
-      stroke="#facc15" 
+      stroke="var(--color-secondary-container)" 
       strokeWidth="4" 
       strokeLinecap="square"
-      className="drop-shadow-lg"
     />
     <path 
       d="M90 45 L105 35 L100 45" 
-      fill="#facc15" 
+      fill="var(--color-secondary-container)" 
     />
   </svg>
 );
@@ -68,4 +66,3 @@ export const ShieldIcon = ({ className }: { className?: string }) => (
 export const CpuIcon = ({ className }: { className?: string }) => (
   <Cpu className={className} />
 );
-

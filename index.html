@@ -3,11 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Bidfast | AI Electrical Takeoff Software for Canadian Contractors</title>
+    <meta
+      name="description"
+      content="Upload electrical drawings and get accurate symbol counts and takeoff lists in minutes. Bidfast's AI is trained on Canadian electrical standards. Free beta access."
+    />
+    <link rel="canonical" href="https://bidfast.ca/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23001e40'/%3E%3Cpath d='M18 42h13l-5 10 20-24H33l5-16z' fill='%23fcd400'/%3E%3C/svg%3E"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Bidfast",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "AI-powered electrical takeoff software that automatically counts symbols on Canadian electrical drawings and generates takeoff lists.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/PreOrder",
+          "description": "Free beta access"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "Bidfast Systems Inc.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vancouver",
+            "addressRegion": "BC",
+            "addressCountry": "CA"
+          }
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is electrical takeoff software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Electrical takeoff software automates the process of counting symbols on electrical drawings and generating a list of materials and quantities. Instead of counting receptacles, switches, and fixtures by hand, the software scans your PDF drawings and produces an accurate takeoff list in minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Bidfast count symbols on electrical drawings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You upload your electrical drawing PDFs to Bidfast. Our AI model, trained specifically on Canadian electrical drawings, identifies every symbol on every page, counts them, and organizes the results into a structured takeoff list with quantities and page references."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Bidfast designed for Canadian electrical contractors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Bidfast is built in Vancouver and our AI model is trained entirely on Canadian electrical drawing data. This means it recognizes the symbol conventions, drawing standards, and annotation styles used by Canadian electrical professionals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is the AI symbol counting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bidfast is designed to deliver high accuracy on standard electrical symbols. You always have full control to review and adjust the generated takeoff list before exporting. We are continuously improving accuracy with each update during the beta period."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What file formats does Bidfast accept?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bidfast accepts PDF electrical drawings, the standard format used for blueprints in the Canadian electrical contracting industry. You can upload individual pages or full drawing sets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Bidfast different from Countfire or Togal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Countfire is UK-focused and built for the British electrical market. Togal covers all construction trades broadly. Bidfast is purpose-built for Canadian electrical contractors, with an AI model trained specifically on Canadian electrical drawing standards and symbol libraries."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my drawing data secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We use enterprise-grade encryption for all uploads. Your proprietary drawings are never shared or used to train public models."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Bidfast integrate with estimating software like Accubid?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are building export integrations for common estimating tools including Accubid and standard CSV/Excel formats. During beta, you can export your takeoff list and import it into your existing workflow."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
