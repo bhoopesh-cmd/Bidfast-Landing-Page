@@ -272,6 +272,12 @@ export default function App() {
               >
                 Pricing
               </a>
+              <a
+                href="/blog"
+                className={`transition-colors ${useLightNavTheme ? 'hover:text-primary' : 'hover:text-white'}`}
+              >
+                Blog
+              </a>
             </div>
             <button
               onClick={scrollToWaitlist}
@@ -863,6 +869,11 @@ export default function App() {
                 <li>
                   <a href="#pricing" className="transition-colors hover:text-primary">
                     Pricing
+                  </a>
+                </li>
+                <li>
+                  <a href="/blog" className="transition-colors hover:text-primary">
+                    Blog
                   </a>
                 </li>
                 <li>
